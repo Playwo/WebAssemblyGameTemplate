@@ -1,0 +1,16 @@
+﻿@page "/"
+@inject IJSRuntime Runtime
+
+<h1>GOOD GAME!!!</h1>
+
+@code
+{
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        var config = new GameConfig();
+
+        await Runtime.InvokeVoidAsync("SetConfig", config);
+        await Runtime.InvokeVoidAsync("Initialize");
+        await Runtime.InvokeVoidAsync("StartGame");
+    }
+}
