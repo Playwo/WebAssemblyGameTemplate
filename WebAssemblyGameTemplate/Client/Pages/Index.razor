@@ -7,10 +7,6 @@
 {
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        var config = new GameConfig();
 
-        await Runtime.InvokeVoidAsync("SetConfig", config);
-        await Runtime.InvokeVoidAsync("Initialize");
-        await Runtime.InvokeVoidAsync("StartGame");
     }
 }
